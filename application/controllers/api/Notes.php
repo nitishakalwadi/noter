@@ -19,6 +19,10 @@ class Notes extends REST_Controller {
         $this->response($this->coreapp->notes->save_note());
     }
     
+    public function update_post(){
+        $this->response($this->coreapp->notes->update_note());
+    }
+    
     public function delete_post(){
         $this->response($this->coreapp->notes->delete_note());
     }

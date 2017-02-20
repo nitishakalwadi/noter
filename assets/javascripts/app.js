@@ -272,8 +272,8 @@ noter.app.initialize = function(){
 	        };
 	        
 	        $.ajax({
-		    	type: config.api.endpoints.saveNote.method,
-                url: config.api.endpoints.saveNote.url,
+		    	type: config.api.endpoints.updateNote.method,
+                url: config.api.endpoints.updateNote.url,
                 headers: headers,
                 data: data,
                 dataType: 'json',

@@ -20,7 +20,8 @@ class Notes_model extends MY_Model
 	}
 	
 	protected function convert_htmlspecialchars($data){
-	    if(is_array($data) && $this->db->affected_rows() > 1){
+		// if(is_array($data) && $this->db->affected_rows() > 1){
+		if(key($data) === 0){
 	        $arr_len = count($data);
 	        for($i=0; $i<$arr_len; $i++){
 	            $data[$i]['html_safe_title'] = nl2br(htmlspecialchars( $data[$i]['title'] ));

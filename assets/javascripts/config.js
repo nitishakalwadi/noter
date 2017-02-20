@@ -33,6 +33,10 @@ $(function() {
                 url: apiRoot + "/notes/save",
                 method: "POST"
             },
+            updateNote: {
+                url: apiRoot + "/notes/update",
+                method: "POST"
+            },
             deleteNote: {
                 url: apiRoot + "/notes/delete",
                 method: "POST"
