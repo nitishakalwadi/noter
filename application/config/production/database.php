@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'hostname' => $OPENSHIFT_MYSQL_DB_HOST,
+	'username' => 'adminglRjbWu',
+	'password' => 'ey-_hINjKRcb',
+	'database' => 'noter',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

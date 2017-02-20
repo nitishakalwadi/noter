@@ -53,7 +53,17 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'local');
+	// define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'local');
+	
+	if( strpos($_SERVER['SERVER_NAME'], "noter-nitishakalwadi.rhcloud.com") !== FALSE ){
+		define('ENVIRONMENT', 'production');
+	}
+	else if( strpos($_SERVER['SERVER_NAME'], "noter-beta-nitishakalwadi.rhcloud.com") !== FALSE ){
+		define('ENVIRONMENT', 'beta');
+	}
+	else{
+		define('ENVIRONMENT', 'local');
+	}
 
 /*
  *---------------------------------------------------------------
