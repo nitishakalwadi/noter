@@ -1,4 +1,4 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$config['upload_path'] = getcwd().'/attachments';
+$config['test'] = "test";
