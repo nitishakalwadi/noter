@@ -56,3 +56,16 @@
 .app .notes .note.row{
     margin: 0px !important;
 }
+
+.edit-note-modal .modal-header{
+    font-size: 24px;
+}
+
+.view-note-modal .modal-header{
+    font-size: 24px;
+}
+
+.view-note-modal .modal-body .title{
+    font-weight: bold;
+    font-size: 18px;
+}
