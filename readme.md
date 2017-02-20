@@ -58,3 +58,18 @@ To display notifications
 
 https://github.com/jquery-validation/jquery-validation
 For front end validation
+
+# Schema
+noter.sql
+
+ION AUTH TABLES
+users
+groups
+login_attempts
+users_groups
+
+REST SERVER TABLES
+keys
+
+NOTER TABLES
+notes
