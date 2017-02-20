@@ -9,10 +9,12 @@ noter.register.initialize = function(){
 		
 		function init(){
 	        initBindings();
+	        initValidation();
 	    }
 	    
 	    function getPageSelectors(){
 	        return {
+	        	registerForm: $(".register #registerForm"),
 	            registerBtn: $(".register .btn-register"),
 	            emailField: $(".register .email-field"),
 	            passwordField: $(".register .password-field"),
@@ -27,6 +29,11 @@ noter.register.initialize = function(){
 	    
 	    function register(){
 	        var selectors = getPageSelectors();
+	        
+	        if( ! selectors.registerForm.valid() ){
+				return;
+			}
+	        
 	        var data = {
 	            email: selectors.emailField.val(),
 	            password: selectors.passwordField.val(),
@@ -57,6 +64,40 @@ noter.register.initialize = function(){
                     selectors.registerBtn.attr("disabled", false);
 		    	}
             });
+	    }
+	    
+	    function initValidation(){
+	    	var selectors = getPageSelectors();
+	        
+	    	var validationRules = {
+				'email': {
+					required: true,
+					email: true
+				},
+				'password': {
+					required: true,
+					minlength: 8
+				},
+				'confirmPassword': {
+					required: true,
+					minlength: 8,
+					equalTo : '[name="password"]'
+				}
+			};
+	
+			var formValidator = selectors.registerForm.validate({
+				rules: validationRules,
+				ignore: [], //allow hidden fields to be validated
+				onsubmit: false,
+				errorPlacement: function(error, element){
+					error.insertAfter(element);
+				},
+				errorElement: "div",
+				errorClass: "aler alert-danger",
+				validClass: "alert alert-success",
+				highlight: "",
+				unhighlight: ""
+			});
 	    }
 	});
 }

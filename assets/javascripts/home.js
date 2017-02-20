@@ -9,10 +9,12 @@ noter.home.initialize = function(){
 		
 		function init(){
 	        initBindings();
+	        initValidation();
 	    }
 	    
 	    function getPageSelectors(){
 	        return {
+	        	loginForm: $(".home #loginForm"),
 	            loginBtn: $(".home .btn-login"),
 	            emailField: $(".home .email-field"),
 	            passwordField: $(".home .password-field")
@@ -26,6 +28,11 @@ noter.home.initialize = function(){
 	    
 	    function login(){
 	        var selectors = getPageSelectors();
+	        
+	        if( ! selectors.loginForm.valid() ){
+				return;
+			}
+	        
 	        var data = {
 	            email: selectors.emailField.val(),
 	            password: selectors.passwordField.val()
@@ -56,6 +63,34 @@ noter.home.initialize = function(){
                     selectors.loginBtn.attr("disabled", false);
 		    	}
             });
+	    }
+	    
+	    function initValidation(){
+	    	var selectors = getPageSelectors();
+	        
+	    	var validationRules = {
+				'email': {
+					required: true,
+					email: true
+				},
+				'password': {
+					required: true
+				}
+			};
+	
+			var formValidator = selectors.loginForm.validate({
+				rules: validationRules,
+				ignore: [], //allow hidden fields to be validated
+				onsubmit: false,
+				errorPlacement: function(error, element){
+					error.insertAfter(element);
+				},
+				errorElement: "div",
+				errorClass: "aler alert-danger",
+				validClass: "alert alert-success",
+				highlight: "",
+				unhighlight: ""
+			});
 	    }
 	});
 }

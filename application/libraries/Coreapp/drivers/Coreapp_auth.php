@@ -54,8 +54,8 @@ class Coreapp_auth extends CI_Driver {
 	    }
 	    
 	    $this->CI->form_validation->set_rules('email'           , 'Email ID'            , 'required|valid_email'); 
-        $this->CI->form_validation->set_rules('password'        , 'Password'            , 'required'); 
-        $this->CI->form_validation->set_rules('confirmPassword' , 'Confirm Password'    , 'required|matches[password]'); 
+        $this->CI->form_validation->set_rules('password'        , 'Password'            , 'required|min_length[8]'); 
+        $this->CI->form_validation->set_rules('confirmPassword' , 'Confirm Password'    , 'required|min_length[8]|matches[password]'); 
         if ($this->CI->form_validation->run() == FALSE) { 
             $return['status'] = FALSE;
             $return['msg'] = $this->messages['email_pass_empty'];

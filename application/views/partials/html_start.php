@@ -13,6 +13,7 @@
     <script type="text/javascript" src="/assets/javascripts/js-cookie.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/jquery.validate.min.js"></script>
     <script type="text/javascript" src="/assets/javascripts/config.js?x=<?php echo time()?>"></script>
     <script type="text/javascript" src="/assets/javascripts/noter.js?x=<?php echo time()?>"></script>
     <script type="text/javascript" src="/assets/javascripts/home.js?x=<?php echo time()?>"></script>
