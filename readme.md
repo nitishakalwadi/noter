@@ -6,25 +6,33 @@ This application allows a user to save, edit and delete notes
     api root - https://noter-nitishakalwadi.rhcloud.com/api
 
     Login - /login
+    type - POST
     params: email, password
 
     Register - /register
+    type - POST
     params: email, password, confirmPassword
 
     Logout - /logout
+    type - POST
 
     Get all notes - /notes/all
+    type - GET
 
     Save Note - /notes/save
+    type - POST
     params: title, note
 
     Update Note - /notes/update
+    type - POST
     params: noteId, title, note
 
     Delete Note - /notes/delete
+    type - POST
     params: noteId
 
     Get a single note - /notes/getNote
+    type - POST
     params: noyeId
 
 # Framework - Codeigniter 3
